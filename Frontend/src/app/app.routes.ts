@@ -14,5 +14,9 @@ export const routes: Routes = [
     {
         path: 'movies/create',
         component: MoviesFormComponent
+    },
+    {
+        path: 'movies/edit:id',
+        component: MoviesFormComponent
     }
 ];
