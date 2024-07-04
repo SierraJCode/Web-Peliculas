@@ -3,7 +3,11 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 
 export const routes: Routes = [
     {
-        path:'/',
+        path:'',
+        component: MoviesListComponent
+    },
+    {
+        path: 'movies',
         component: MoviesListComponent
     }
 ];
