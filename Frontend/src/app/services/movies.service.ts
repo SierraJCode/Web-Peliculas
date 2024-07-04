@@ -12,24 +12,24 @@ export class MoviesService {
 
   constructor(private http: HttpClient) {}
 
-  getMovies():Observable<Movie>{
-    return this.http.get(`${this.BDURL}/movies`)
+  getMovies(){
+    return this.http.get(`${this.BDURL}/movies`);
   }
 
   getMovie(id: string){
-
+    return this.http.get(`${this.BDURL}/movies/${id}`);
   }
 
   createMovie(movie: Movie){
-
+    return this.http.post(`${this.BDURL}/movies/create`, movie)
   }
 
   updateMovie(id: string, movie: Movie){
-
+    return this.http.put(`${this.BDURL}/movies/update/${id}`, movie)
   }
 
   deleteMovie(id: string){
-
+    return this.http.delete(`${this.BDURL}/movies/delete/${id}`)
   }
 
 }
