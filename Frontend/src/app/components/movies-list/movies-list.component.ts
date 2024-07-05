@@ -16,10 +16,9 @@ export class MoviesListComponent {
   }
 
   getMovies(){
-    try {
-      this.movieService.getMovies();
-    } catch (error) {
-      console.log(error);
-    }
+    this.movieService.getMovies().subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    )
   }
 }
