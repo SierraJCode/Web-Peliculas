@@ -21,15 +21,15 @@ export class MoviesService {
   }
 
   createMovie(movie: Movie):Observable<Movie>{
-    return this.http.post<Movie>(`${this.BDURL}/movies/create`, movie)
+    return this.http.post<Movie>(`${this.BDURL}/movies/`, movie)
   }
 
   updateMovie(id: string, movie: Movie):Observable<Movie>{
-    return this.http.put<Movie>(`${this.BDURL}/movies/update/${id}`, movie)
+    return this.http.put<Movie>(`${this.BDURL}/movies/${id}`, movie)
   }
 
   deleteMovie(id: string): Observable<Movie>{
-    return this.http.delete<Movie>(`${this.BDURL}/movies/delete/${id}`)
+    return this.http.delete<Movie>(`${this.BDURL}/movies/${id}`)
   }
 
 }
