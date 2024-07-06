@@ -1,24 +1,32 @@
 import { Component } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-movies-list',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './movies-list.component.html',
   styleUrl: './movies-list.component.css'
 })
 export class MoviesListComponent {
+
+
   constructor(private movieService: MoviesService){}
+
+  movie: any = this.movieService.getMovies().subscribe(
+    res => console.log(res),
+    err => console.log(err)
+  )
+
 
   ngOnInit(){
     this.getMovies();
   }
 
   getMovies(){
-    this.movieService.getMovies().subscribe(
-      res => console.log(res),
-      err => console.log(err)
-    )
+    return this.movieService.getMovies().subscribe({next: (res) => {
+      console.log(res)}
+    })
   }
 }
