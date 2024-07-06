@@ -1,11 +1,11 @@
-<div *ngFor="let movie of movies" class="card">
-    <div>
-        <ul>
-            <li>{{ movie.title }}</li>
+<div *ngFor="let movie of movies" class="grid grid-cols-4">
+    <div class="m-6 bg-slate-200 rounded-xl p-8 shadow-lg">
+        <ul class="pt-6 space-y-4">
+            <li><img [src]="movie.image" alt=""></li>
+            <li class="text-center font-semibold text-lg">{{ movie.title }}</li>
             <li>{{ movie.description }}</li>
-            <li>{{ movie.producer }}</li>
-            <li>{{ movie.time }}</li>
-            <li>{{ movie.title }}</li>
+            <li>Productor: {{ movie.producer }}</li>
+            <li>Duración: {{ movie.time }}</li>
         </ul>
     </div>
 </div>
