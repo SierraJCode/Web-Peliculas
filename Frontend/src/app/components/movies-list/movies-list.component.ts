@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
-import { FormsModule } from '@angular/forms';
 import { Movie } from '../../interfaces/movie';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-movies-list',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [CommonModule],
   templateUrl: './movies-list.component.html',
   styleUrl: './movies-list.component.css'
 })
