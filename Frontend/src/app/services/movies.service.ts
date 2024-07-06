@@ -8,7 +8,7 @@ import { Movie } from '../interfaces/movie';
 })
 export class MoviesService {
 
-  BDURL: string = 'localhost:3000'
+  BDURL: string = 'http://localhost:3000'
 
   constructor(private http: HttpClient) {}
 
