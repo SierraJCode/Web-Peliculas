@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { FormsModule } from '@angular/forms';
 import { Movie } from '../../interfaces/movie';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-movies-list',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './movies-list.component.html',
   styleUrl: './movies-list.component.css'
 })
@@ -16,19 +17,14 @@ export class MoviesListComponent {
 
   constructor(private movieService: MoviesService){}
 
-  movie: any = this.movieService.getMovies().subscribe(
-    res => console.log(res),
-    err => console.log(err)
-  )
-
-
   ngOnInit(){
     this.getMovies();
   }
 
   getMovies(){
-    return this.movieService.getMovies().subscribe({next: (res) => {
-      console.log(res)}
-    })
+    return this.movieService.getMovies().subscribe(
+      res => this.movies = res,
+      err => console.log(err)
+    )
   }
 }

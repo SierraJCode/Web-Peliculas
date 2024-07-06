@@ -1,4 +1,11 @@
-<div>
-    {{ movie }}
+<div *ngFor="let movie of movies" class="card">
+    <div>
+        <ul>
+            <li>{{ movie.title }}</li>
+            <li>{{ movie.description }}</li>
+            <li>{{ movie.producer }}</li>
+            <li>{{ movie.time }}</li>
+            <li>{{ movie.title }}</li>
+        </ul>
+    </div>
 </div>
-
