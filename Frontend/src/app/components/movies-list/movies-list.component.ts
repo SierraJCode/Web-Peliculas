@@ -22,7 +22,10 @@ export class MoviesListComponent {
 
   getMovies(){
     return this.movieService.getMovies().subscribe(
-      res => this.movies = res,
+      res => {
+        this.movies = res;
+        console.log(res)
+      },
       err => console.log(err)
     )
   }
