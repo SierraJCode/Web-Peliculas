@@ -29,4 +29,13 @@ export class MoviesListComponent {
       err => console.log(err)
     )
   }
+
+  deleteMovie(id:string){
+    return this.movieService.deleteMovie(id).subscribe(
+      res => {
+        this.getMovies()
+      },
+      err => console.log(err)
+    )
+  }
 }
